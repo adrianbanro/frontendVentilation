@@ -54,9 +54,9 @@ import { RoomSpotComponent } from './components/roomSpot.component';
     LayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RoomSpotComponent]
 })
-export class AppModule { }
+export class DetailSpotModule { }
 
 
 
