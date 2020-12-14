@@ -51,6 +51,7 @@ export class TutorialsListComponent implements OnInit {
         },
         error => {
           console.log(error);
+          
         });
   }
 

@@ -26,6 +26,21 @@ import { WrapperDataFormatingComponent } from './components/wrapperDataFormating
 import { Slider } from './components/slider.component';
 import { RoomComponent } from './components/room.component';
 import { RoomSpotComponent } from './components/roomSpot.component';
+import { SideMenuComponent } from './components/sideMenu.component';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDialogModule } from '@angular/material/dialog';
+//import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+
+import { VideoComponent } from './components/video.component';
+import { TutorialComponent } from './components/tutorial.component';
+import { BioRhythmComponent } from './components/bioRhythm.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -36,7 +51,7 @@ import { RoomSpotComponent } from './components/roomSpot.component';
     RoomsComponent,
     SpotComponent,
     DashComponent,
-    WrapperDataFormatingComponent, Slider, RoomComponent, RoomSpotComponent
+    WrapperDataFormatingComponent, Slider, RoomComponent, RoomSpotComponent, SideMenuComponent, TutorialComponent, VideoComponent, BioRhythmComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +66,14 @@ import { RoomSpotComponent } from './components/roomSpot.component';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatDialogModule,
+    YouTubePlayerModule,
+    NgbModule,
+    MatExpansionModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
