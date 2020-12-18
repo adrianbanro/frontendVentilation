@@ -309,6 +309,7 @@ import { BioRhythmComponent } from './bioRhythm.component';
 
 -->
 <bioRhythm></bioRhythm>
+
     `,
 providers: [RoomService],
 styles: [`

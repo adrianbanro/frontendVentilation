@@ -11,9 +11,27 @@ import { APIService } from '././api.service';
 
 import { Observable } from 'rxjs';
 
+
+import {CredentialsComponent} from './credentials/credentials.component';
+import { FormGroup, FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
+//import { ReactiveFormsModule } from '@angular/forms';
+
+//import {CredentialsComponent} from './credentials/credentials.component';
+//import { CredentialsComponent } from '../credentials/credentials.component';
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//import { Credentials22Component } from '../credentials22/credentials22.component';
+
 @Component({
     selector: 'sideMenu',
     template: `
+
+    <!--
+    <app-credentials22></app-credentials22>
+<data></data>
+-->
+
+
 <!--
     <head>
 
@@ -56,7 +74,7 @@ import { Observable } from 'rxjs';
       <li>Menu Item</li>
       <li>Menu Item</li>
       <li>Menu Item</li>
-      <li>Menu Item</li>
+      <li>Menu Item1</li>
     </ul>
     </body>
 -->
@@ -130,11 +148,11 @@ style="border-color: #4CAF50; color: green;"
 <button  [ngClass]="currentClasses" mat-raised-button (click)="reserveSpot(building,floor,room,spot)">Ø {{spot}}</button> <br>
 -->
 
-<div *ngIf="isUsed(spot)==true">
+<div *ngIf="isUsed(spot)==false">
 <button  class="virginSpot"  mat-raised-button (click)="reserveSpot(building,floor,room,spot)">Ø {{spot}}</button> <br>
 </div>
 
-<div *ngIf="isUsed(spot)==false">
+<div *ngIf="isUsed(spot)==true">
 <button  class="usedSpot"  mat-raised-button (click)="reserveSpot(building,floor,room,spot)">Ø {{spot}}</button> <br>
 </div>
 
@@ -185,22 +203,6 @@ style="border-color: #4CAF50; color: green;"
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </mat-expansion-panel>
 </div>
 </mat-accordion>
@@ -215,9 +217,10 @@ style="border-color: #4CAF50; color: green;"
 
 
 <!--
+
 -->
 
-
+<credentials></credentials>
 
   `,
   styles: [`
@@ -354,10 +357,58 @@ virginSpots=[];
 virginSpot;
 usedSpots=[];
 
+
+
+//////////
+
+/*
+addressForm = this.fb.group({
+  company: null,
+  firstName: [null, Validators.required],
+  lastName: [null, Validators.required],
+  address: [null, Validators.required],
+  address2: null,
+  city: [null, Validators.required],
+  state: [null, Validators.required],
+  postalCode: [null, Validators.compose([
+    Validators.required, Validators.minLength(5), Validators.maxLength(5)])
+  ],
+  shipping: ['free', Validators.required]
+});
+
+hasUnitNumber = false;
+
+states = [
+  {name: 'Alabama', abbreviation: 'AL'},
+  {name: 'Alaska', abbreviation: 'AK'},
+  {name: 'American Samoa', abbreviation: 'AS'}
+];
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+    //constructor(private apiService: APIService,private fb: FormBuilder){
     constructor(private apiService: APIService){
 this.findBuildings()
 //this.virginSpot=true;
 
+    }
+
+
+
+
+    onSubmit() {
+      alert('Thanks!');
     }
 
     isUsed(spot) {
@@ -701,15 +752,22 @@ this.apiService.findBookingIDByUserSpot(userID,spot_ID)
     console.log("spot_ID 9696 : ",spot_ID);
     //console.log("this.spot_ID 9696 : ",this.spot_ID);
     this.tuples= data22;
-    console.log("data 5353 : ",data22);
+    console.log("data 5353 MZM : ",data22);
 
 
 //if (data22 !==[])
 //if (data22 !=="undefined")
-if (data22.length !==0)
+//if (data22.length !==0)
+//if (data22 !=[])
+//if (data22.isEmpty())
+//if (data22[0]==0)
+if (data22[0].id !=="undefined")
+
     {
     //let result = this.tuples;
     let result = this.tuples.map(a => a.id);
+    console.log("result MZM  : ",result);
+
     let notVirginSpot = spot_ID;
 
     console.log("not virgin spot  : ",notVirginSpot);

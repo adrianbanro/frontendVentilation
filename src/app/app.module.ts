@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
+import { CredentialsComponent } from './components/credentials/credentials.component';
+import { Credentials22Component } from './credentials22/credentials22.component';
+
+
+import { FormGroup, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +61,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     RoomsComponent,
     SpotComponent,
     DashComponent,
-    WrapperDataFormatingComponent, Slider, RoomComponent, RoomSpotComponent, SideMenuComponent, TutorialComponent, VideoComponent, BioRhythmComponent
+    WrapperDataFormatingComponent, Slider, RoomComponent, RoomSpotComponent, SideMenuComponent, TutorialComponent, VideoComponent, BioRhythmComponent, CredentialsComponent, Credentials22Component
   ],
   imports: [
     BrowserModule,
@@ -73,7 +83,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     YouTubePlayerModule,
     NgbModule,
     MatExpansionModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
+    //,
+    //FormGroup, FormControl, Validators
   ],
   providers: [],
   bootstrap: [AppComponent]
